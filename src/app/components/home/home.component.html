@@ -1,0 +1,77 @@
+<section>
+  <div class="container">
+    <h2>Departamento</h2>
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Código padre</th>
+            <th scope="col">Nombre padre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor=" let item of departments; ">
+            <th scope="row">{{ item.id }}</th>
+            <td>{{ item.name }}</td>
+            <th scope="row">-</th>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Provincia</h2>
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Código padre</th>
+            <th scope="col">Nombre padre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor=" let item of provinces; ">
+            <th scope="row">{{ item.id }}</th>
+            <td>{{ item.name }}</td>
+            <th scope="row">{{ item.department.id }}</th>
+            <td>{{ item.department.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Distrito</h2>
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Código padre</th>
+            <th scope="col">Nombre padre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor=" let item of districts; ">
+            <th scope="row">{{ item.id }}</th>
+            <td>{{ item.name }}</td>
+            <th scope="row">{{ item.province.id }}</th>
+            <td>{{ item.province.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
